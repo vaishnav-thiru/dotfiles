@@ -1,0 +1,19 @@
+# defaults
+export ZSH="$HOME/.oh-my-zsh"
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# cycle command history
+if [[ -n "$ZSH_VERSION" ]]; then
+    bindkey '^[[A' history-search-backward
+    bindkey '^[[B' history-search-forward
+elif [[ -n "$BASH_VERSION" ]]; then
+    bind '"\e[A": history-search-backward'
+    bind '"\e[B": history-search-forward'
+fi
+
+alias vim=nvim
+
+alias zshconfig="nvim ~/.zshrc"
+alias code-zshconfig="code ~/.zshrc"
+alias sourcezsh="source ~/.zshrc"
+alias ghosttyconfig="nvim $XDG_CONFIG_HOME/ghostty/config"
